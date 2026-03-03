@@ -1,0 +1,389 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Azul soft + complementos para degradês */
+  --soft-blue: 125 211 252;   /* sky-300 */
+  --soft-blue-dark: 56 189 248; /* sky-400 */
+  --soft-indigo: 165 180 252;  /* indigo-300 */
+  --soft-violet: 196 181 253;  /* violet-300 */
+}
+
+/* Fundo da página: degradé suave em tons de azul (energético mas clean) */
+.bg-page {
+  background: linear-gradient(180deg, rgb(224 242 254) 0%, rgb(241 245 253) 25%, rgb(248 250 252) 60%, rgb(250 251 253) 100%);
+  min-height: 100vh;
+  transition: background 220ms ease-out;
+}
+
+.bg-page-pt {
+  background: radial-gradient(circle at top left, rgb(125 211 252 / 0.4), transparent 55%),
+    linear-gradient(180deg, rgb(224 242 254) 0%, rgb(241 245 253) 25%, rgb(248 250 252) 60%, rgb(250 251 253) 100%);
+}
+
+.bg-page-es {
+  background: radial-gradient(circle at top left, rgb(129 140 248 / 0.35), transparent 55%),
+    radial-gradient(circle at bottom right, rgb(251 191 36 / 0.18), transparent 55%),
+    linear-gradient(180deg, rgb(15 23 42 / 0.04) 0%, rgb(248 250 252) 70%, rgb(248 250 252) 100%);
+}
+
+.bg-page-en {
+  background: radial-gradient(circle at top left, rgb(59 130 246 / 0.35), transparent 55%),
+    radial-gradient(circle at bottom right, rgb(196 181 253 / 0.22), transparent 55%),
+    linear-gradient(180deg, rgb(226 232 240) 0%, rgb(248 250 252) 60%, rgb(250 251 253) 100%);
+}
+
+/* Hero: reforço suave no topo */
+.gradient-hero {
+  background: linear-gradient(180deg, rgb(224 242 254 / 0.4) 0%, transparent 60%);
+}
+
+.gradient-btn {
+  background: linear-gradient(135deg, rgb(56 189 248) 0%, rgb(129 140 248) 45%, rgb(196 181 253) 100%);
+  box-shadow: 0 4px 16px rgb(129 140 248 / 0.45);
+}
+
+.gradient-btn:hover {
+  background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(129 140 248) 45%, rgb(196 181 253) 100%);
+  box-shadow: 0 6px 22px rgb(129 140 248 / 0.55);
+}
+
+.gradient-bar {
+  background: linear-gradient(90deg, rgb(125 211 252) 0%, rgb(165 180 252) 50%, rgb(196 181 253) 100%);
+}
+
+.lang-bar-pt {
+  background: linear-gradient(90deg, rgb(56 189 248) 0%, rgb(129 140 248) 50%, rgb(165 180 252) 100%);
+}
+
+.lang-bar-es {
+  background: linear-gradient(
+    90deg,
+    rgb(129 140 248) 0%,
+    rgb(196 181 253) 45%,
+    rgb(251 191 36) 100%
+  );
+}
+
+.lang-bar-en {
+  background: linear-gradient(90deg, rgb(37 99 235) 0%, rgb(129 140 248) 55%, rgb(196 181 253) 100%);
+}
+
+/* Nome com degradé – variantes por idioma */
+.name-gradient {
+  font-weight: 700;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background-image 200ms ease-out, background 200ms ease-out;
+}
+
+.name-gradient-pt {
+  background-image: linear-gradient(135deg, rgb(15 23 42) 0%, rgb(30 64 175) 45%, rgb(56 189 248) 100%);
+}
+
+.name-gradient-es {
+  background-image: linear-gradient(135deg, rgb(15 23 42) 0%, rgb(129 140 248) 45%, rgb(251 191 36) 100%);
+}
+
+.name-gradient-en {
+  background-image: linear-gradient(135deg, rgb(15 23 42) 0%, rgb(59 130 246) 40%, rgb(196 181 253) 100%);
+}
+
+/* Ícone N do header: animação lava-lamp dentro do círculo */
+.logo-n-link {
+  position: relative;
+  border: 1px solid rgb(148 163 184 / 0.4);
+}
+
+.logo-n-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgb(125 211 252) 0%,
+    rgb(165 180 252) 35%,
+    rgb(196 181 253) 70%,
+    rgb(125 211 252) 100%
+  );
+  background-size: 280% 280%;
+  animation: logo-lava 5s ease-in-out infinite;
+}
+
+.logo-n-bg::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgb(196 181 253 / 0.6) 0%,
+    transparent 50%
+  );
+  animation: logo-blob 4s ease-in-out infinite;
+}
+
+.logo-n-letter {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes logo-lava {
+  0%, 100% { background-position: 0% 0%; }
+  25%      { background-position: 100% 0%; }
+  50%      { background-position: 100% 100%; }
+  75%      { background-position: 0% 100%; }
+}
+
+@keyframes logo-blob {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  33%      { transform: translate(15%, -10%) scale(1.1); opacity: 0.6; }
+  66%      { transform: translate(-10%, 15%) scale(0.9); opacity: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-n-bg { animation: none; background-position: 0% 0%; }
+  .logo-n-bg::before { animation: none; }
+}
+
+/* Language switcher */
+.language-switcher {
+  background-color: rgb(248 250 252 / 0.9);
+}
+
+.language-switcher-btn {
+  color: rgb(100 116 139);
+}
+
+.language-switcher-btn--active {
+  background-color: #ffffff;
+  color: rgb(15 23 42);
+  box-shadow: 0 1px 4px rgb(15 23 42 / 0.18);
+}
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Títulos de secção: linha fina e discreta */
+.section-title {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: rgb(15 23 42);
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgb(125 211 252), rgb(165 180 252));
+}
+
+/* Cards com sombra muito suave */
+.card-clean {
+  background: #fff;
+  border: 1px solid rgb(226 232 240 / 0.8);
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card-clean:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.06);
+  border-color: rgb(203 213 225 / 0.9);
+  transform: translateY(-2px);
+}
+
+/* Skills: pills com mais presença visual */
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(30 64 175);
+  background: rgb(239 246 255);
+  border: 1px solid rgb(191 219 254);
+  border-radius: 0.75rem;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-pill:hover {
+  background: rgb(219 234 254);
+  color: rgb(30 64 175);
+  border-color: rgb(129 140 248 / 0.7);
+  box-shadow: 0 2px 10px rgb(129 140 248 / 0.25);
+}
+
+/* Tag de status (ex.: "Em desenvolvimento") */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: rgb(224 231 255);
+  color: rgb(55 48 163);
+}
+
+/* Tech badges (bolinhas + nome da tecnologia) */
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgb(30 64 175);
+  background: rgb(239 246 255);
+}
+
+.tech-pill-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgb(125 211 252), rgb(59 130 246));
+}
+
+/* Micro-anim para botões principais */
+.primary-cta {
+  transform: translateY(0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-cta:hover {
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Logo circular luminoso do footer (MW) */
+.footer-mark {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  position: relative;
+  background: radial-gradient(circle at 30% 30%, #f9fafb, #e2e8f0);
+  box-shadow: 0 4px 10px rgb(15 23 42 / 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-mark-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgb(148 163 184);
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-brand-text {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(148 163 184);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-brand:hover .footer-brand-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-pill:hover {
+    transform: none;
+  }
+}
+
+/* Nav: sublinhado em degradé com animação de preenchimento */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, rgb(125 211 252), rgb(165 180 252));
+  border-radius: 1px;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link::after {
+    transition: none;
+  }
+}
+
+/* Suave redução de movimento para quem prefere */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.7s ease-out forwards;
+}
+
+/* Transição ao mudar de idioma: o bloco principal faz um fade-in curto */
+.main-lang-transition {
+  animation: lang-fade-in 0.25s ease-out forwards;
+}
+
+@keyframes lang-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-enable {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+  .animate-fade-in {
+    opacity: 1;
+  }
+  .main-lang-transition {
+    animation: none;
+    opacity: 1;
+  }
+}
