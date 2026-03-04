@@ -1,4 +1,4 @@
-# CV Noemi Colubali · Live-CV
+#Live-CV
 
 Currículo online em formato one-page, responsivo e multilíngue (PT, ES, EN), com tema visual que acompanha o idioma selecionado.
 
