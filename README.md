@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://live-cv-lovat.vercel.app" target="_blank" rel="noopener noreferrer">
-    <img src="public/IIVE-cv.png" alt="Preview do Live CV" width="900" />
+    <img src="public/lIVE-cv.png" alt="Preview do Live CV" width="900" />
   </a>
 </p>
 
