@@ -1,5 +1,15 @@
 #Live-CV
 
+<p align="center">
+  <a href="https://live-cv-lovat.vercel.app" target="_blank" rel="noopener noreferrer">
+    <img src="public/IIVE-cv.png" alt="Preview do Live CV" width="900" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://live-cv-lovat.vercel.app">Ver demo</a>
+</p>
+
 Currículo online em formato one-page, responsivo e multilíngue (PT, ES, EN), com tema visual que acompanha o idioma selecionado.
 
 ![Stack](https://img.shields.io/badge/React-19-61dafb?logo=react)
