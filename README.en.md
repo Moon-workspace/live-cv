@@ -1,6 +1,9 @@
 # Live-CV
 
-[🇵🇹 Português](README.pt.md) · [🇬🇧 English](README.en.md) · [🇪🇸 Español](README.es.md)
+<p align="center">
+  <sub>Ler em · Read in · Leer en</sub><br>
+  <a href="README.pt.md">🇵🇹 Português</a> &nbsp;&nbsp;·&nbsp;&nbsp; <a href="README.en.md">🇬🇧 English</a> &nbsp;&nbsp;·&nbsp;&nbsp; <a href="README.es.md">🇪🇸 Español</a>
+</p>
 
 > **One-page** online CV, responsive and multilingual (PT / ES / EN), with a **visual theme that adapts to the selected language** · designed to be easy to navigate and quick to read.
 
