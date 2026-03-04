@@ -4,6 +4,10 @@
 
 
 
+<p align="center">
+  <img src="public/lIVE-cv.png" alt="Live-CV em vários dispositivos" width="900" />
+</p>
+
 **[Ver demo](https://live-cv-lovat.vercel.app)** → **[Repositório](https://github.com/Moon-workspace/live-cv)** → **[Correr em local](#-como-correr-em-local)**
 
 
