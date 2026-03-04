@@ -1,95 +1,134 @@
-#Live-CV
+# Live-CV
 
+> Currículo online **one-page**, responsivo e multilingue (PT / ES / EN), com **tema visual que se adapta ao idioma** · feito para ser simples de navegar e rápido de ler.
+
+
+
+**[Ver demo](https://live-cv-lovat.vercel.app)** → **[Repositório](https://github.com/Moon-workspace/live-cv)** → **[Correr em local](#-como-correr-em-local)**
+
+
+
+---
+
+## ✨ Sobre o projeto
+
+O **Live-CV** é uma abordagem moderna à apresentação profissional: um currículo **interativo**, com **leitura rápida para recrutadores**, acessível e adaptado a desktop e mobile.
+
+Destaques:
+
+- Navegação simples (secções claras)
+- Multilingue (PT / ES / EN)
+- Tema visual adaptativo por idioma (fundo + gradientes + UI)
+- Acessibilidade e semântica pensadas desde o início
+
+---
+
+## 🎯 Objetivo
+
+Criar um CV digital que:
+
+- seja **escaneável** em poucos segundos;
+- funcione bem em **qualquer dispositivo**;
+- mostre **identidade visual** sem perder profissionalismo;
+- demonstre organização e arquitetura em React (componentização, contexto e i18n).
+
+---
+
+## 🧩 Funcionalidades
+
+- 🌍 **3 idiomas** (PT, ES, EN) com troca instantânea
+- 🎨 **Tema por idioma** (fundo + gradientes adaptam ao idioma selecionado)
+- 🧭 Secções: Experiência, Formação, Competências, Projetos, Certificados, Línguas, Contacto
+- 🔗 Contactos diretos: WhatsApp (abre conversa), Email (mailto), LinkedIn, GitHub
+- ♿ Acessibilidade: estrutura semântica + respeito por `prefers-reduced-motion`
+- ✨ Ícone animado “N” no header (lava-lamp em CSS)
+
+---
+
+## 🖼️ Preview
+
+A capa do projeto está no topo. Em baixo, um GIF do site em ação (hero, navegação e troca de idioma).
+
+**Site em ação**
 <p align="center">
-  <a href="https://live-cv-lovat.vercel.app" target="_blank" rel="noopener noreferrer">
-    <img src="public/lIVE-cv.png" alt="Preview do Live CV" width="900" />
-  </a>
+  <img src="docs/LIVE-CV.gif" alt="Live-CV: hero, navegação e idiomas" width="900" />
 </p>
 
-<p align="center">
-  <a href="https://live-cv-lovat.vercel.app">Ver demo</a>
-</p>
-
-Currículo online em formato one-page, responsivo e multilíngue (PT, ES, EN), com tema visual que acompanha o idioma selecionado.
-
-![Stack](https://img.shields.io/badge/React-19-61dafb?logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript)
-![Vite](https://img.shields.io/badge/Vite-8-646cff?logo=vite)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-38bdf8?logo=tailwindcss)
+*(Se quiseres mais tarde: podes adicionar `docs/preview-languages.gif` para a troca de idioma em detalhe, e screenshots por idioma em `docs/`.)*
 
 ---
 
-## Funcionalidades
+## 🧱 Stack & decisões
 
-- **Três idiomas**: Português, Espanhol e Inglês com troca instantânea
-- **Tema por idioma**: fundo, degradé do nome e barras de nível de línguas adaptam-se ao idioma (PT / ES / EN)
-- **Secções**: Experiência, Formação, Competências, Projetos, Certificados, Línguas, Contacto
-- **Contacto**: cards para WhatsApp, Email e LinkedIn (sem formulário; WhatsApp abre conversa direta)
-- **Acessibilidade**: `prefers-reduced-motion` respeitado, labels e estrutura semântica
-- **Ícone animado**: logo “N” no header com animação lava-lamp em CSS
 
----
+| Tecnologia    | Uso                                   |
+| ------------- | ------------------------------------- |
+| React         | UI componentizada                     |
+| TypeScript    | Tipagem / confiança no código         |
+| Vite          | Dev server + build rápido             |
+| Tailwind CSS  | Sistema de estilos e consistência     |
+| i18n (manual) | Conteúdos PT/ES/EN e controlo do tema |
 
-## Stack
 
-| Tecnologia   | Uso                    |
-| ------------ | ---------------------- |
-| React 19     | UI                     |
-| TypeScript   | Tipagem                |
-| Vite 8       | Build e dev server     |
-| Tailwind CSS 4 | Estilos e tema      |
-| i18n manual  | Traduções (PT/ES/EN)   |
+**Notas de implementação**
+
+- `LanguageContext` centraliza idioma e permite que o tema acompanhe essa escolha.
+- Componentes pequenos e reutilizáveis (nav, secções, cards).
+- UI focada em leitura e hierarquia visual.
 
 ---
 
-## Como correr em local
+## 🗂️ Estrutura do projeto
+
+```txt
+public/                 # assets estáticos (PDFs do CV, favicon, mockup, etc.)
+src/
+  components/           # UI (NavLinks, LanguageSwitcher, FadeInSection, etc.)
+  config/               # links (GitHub, LinkedIn, Email, WhatsApp, PDFs)
+  context/              # LanguageContext (estado do idioma)
+  i18n/                 # translations.ts (PT/ES/EN)
+  App.tsx
+  main.tsx
+  index.css             # tema, gradientes, animações
+```
+
+---
+
+## 🧪 Como correr em local
 
 ```bash
-# Instalar dependências
 npm install
-
-# Desenvolvimento
 npm run dev
+```
 
-# Build para produção
+Build de produção:
+
+```bash
 npm run build
-
-# Pré-visualizar build
 npm run preview
 ```
 
 ---
 
-## Estrutura do projeto
+## 🚀 Deploy (Vercel)
 
-```
-cv-noemi/
-├── public/           # favicon, PDFs do CV (por idioma)
-├── src/
-│   ├── components/    # NavLinks, LanguageSwitcher, FadeInSection, etc.
-│   ├── config/        # links (GitHub, LinkedIn, email, WhatsApp, PDFs)
-│   ├── context/       # LanguageContext (estado do idioma)
-│   ├── i18n/          # translations.ts (conteúdo PT/ES/EN)
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css      # temas, degradês, animações
-├── index.html
-├── package.json
-└── README.md
-```
+- **Framework preset:** Vite
+- **Build command:** `npm run build`
+- **Output directory:** `dist`
+
+Se estiveres a usar PDFs por idioma, garante que estão em `public/` e que os caminhos em `src/config/links.ts` estão corretos.
 
 ---
 
-## Deploy (ex.: Vercel)
+## 🗺️ Roadmap (próximos upgrades)
 
-- **Build command**: `npm run build`
-- **Output directory**: `dist`
-- **Framework preset**: Vite
-
-Não é necessário configurar variáveis de ambiente para o funcionamento básico. Os PDFs do CV devem estar em `public/` e os caminhos em `src/config/links.ts` devem coincidir.
+- Modal/Popup de projetos com preview + links (demo/repo)
+- Mais screenshots no README (desktop/mobile)
+- GIF da troca de idioma + scroll
+- Micro animações com `prefers-reduced-motion`
 
 ---
 
-## Licença
+## 📄 Licença
 
-Projeto pessoal · [MOON-WORKSPACE](https://github.com/Moon-workspace).
+Projeto pessoal · [Moon-Workspace](https://github.com/Moon-workspace).
