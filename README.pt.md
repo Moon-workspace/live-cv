@@ -4,15 +4,11 @@
 
 > Currículo online **one-page**, responsivo e multilingue (PT / ES / EN), com **tema visual que se adapta ao idioma** · feito para ser simples de navegar e rápido de ler.
 
-
-
 <p align="center">
   <img src="public/lIVE-cv.png" alt="Live-CV em vários dispositivos" width="900" />
 </p>
 
 **[Ver demo](https://live-cv-lovat.vercel.app)** → **[Repositório](https://github.com/Moon-workspace/live-cv)** → **[Correr em local](#-como-correr-em-local)**
-
-
 
 ---
 
@@ -66,7 +62,6 @@ A capa do projeto está no topo. Em baixo, um GIF do site em ação (hero, naveg
 
 ## 🧱 Stack & decisões
 
-
 | Tecnologia    | Uso                                   |
 | ------------- | ------------------------------------- |
 | React         | UI componentizada                     |
@@ -74,7 +69,6 @@ A capa do projeto está no topo. Em baixo, um GIF do site em ação (hero, naveg
 | Vite          | Dev server + build rápido             |
 | Tailwind CSS  | Sistema de estilos e consistência     |
 | i18n (manual) | Conteúdos PT/ES/EN e controlo do tema |
-
 
 **Notas de implementação**
 
